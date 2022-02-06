@@ -14,6 +14,12 @@ import java.util.Random;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 
+/**
+ * @Description qps 超过阈值时直接拒绝
+ * @Author sunxinbo
+ * @Return
+ * @Date 2022/2/6 18:58
+ */
 public class FlowQpsDemo {
 
     private static final String KEY = "abc";
@@ -48,6 +54,8 @@ public class FlowQpsDemo {
         rule1.setCount(20);
         rule1.setGrade(RuleConstant.FLOW_GRADE_QPS);
         rule1.setLimitApp("default");
+        // 直接拒绝
+        rule1.setControlBehavior(RuleConstant.CONTROL_BEHAVIOR_DEFAULT);
         rules.add(rule1);
         FlowRuleManager.loadRules(rules);
     }
