@@ -1,4 +1,4 @@
-package com.example.cloudalibaba.sentinel.hello;
+package com.example.cloudalibaba.sentinel.basic;
 
 import com.alibaba.csp.sentinel.Entry;
 import com.alibaba.csp.sentinel.SphU;
@@ -12,6 +12,9 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 基本用法
+ */
 public class BasicUseTest {
 
     private static String PROCTED_RESOURCE = "helloApp";
